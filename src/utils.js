@@ -9,3 +9,12 @@ export class Logger {
     }
   }
 }
+
+export function wait(milliseconds) {
+  return new Promise((resolve, reject) => {
+    let timeout = setTimeout(() => {
+      resolve();
+      clearTimeout(timeout);
+    }, milliseconds);
+  });
+}
