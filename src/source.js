@@ -33,8 +33,8 @@ export class Source {
     const innerWidth = window.innerWidth;
     const innerHeight = window.innerHeight;
     const tileWidth = (innerWidth > innerHeight) ?
-      Math.ceil((innerHeight - innerHeight / 3) / this.options.gridWidth) :
-      Math.ceil((innerWidth - innerWidth / 3) / this.options.gridHeight);
+      Math.ceil((innerHeight - innerHeight / this.options.controlsScreenPart) / this.options.gridWidth) :
+      Math.ceil((innerWidth - innerWidth / this.options.controlsScreenPart) / this.options.gridHeight);
     const tileHeight = tileWidth;
     this.options.tileWidth = tileWidth;
     this.options.tileHeight = tileHeight;
