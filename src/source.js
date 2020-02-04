@@ -1,4 +1,4 @@
-import log from './utils';
+import {log, handleClick} from './utils';
 
 export class Source {
   constructor(options) {
@@ -76,5 +76,26 @@ export class Source {
     if(isStoppedBefore) {
       this.start();
     }
+  }
+
+  createControls() {
+    const controlsElement = document.getElementById('controls');
+    const left = document.getElementById('left');
+    const center = document.getElementById('center');
+    const up = document.getElementById('up');
+    const down = document.getElementById('down');
+    const right = document.getElementById('right');
+  
+    const innerWidth = window.innerWidth;
+    const innerHeight = window.innerHeight;
+    const px = 'px';
+    const calculatedHeight = (innerHeight - this.options.renderElement.height - 10) + px;
+    controlsElement.style.height = left.style.height = center.style.height = right.style.height = calculatedHeight;
+    const widthDividedByThree = Math.floor(innerWidth / 3) - 27 + px;
+    left.style.width = center.style.width = right.style.width = widthDividedByThree;
+    up.style.width = down.style.width = widthDividedByThree;
+    up.style.height = down.style.height = Math.floor(parseInt(calculatedHeight) / 2 - 10) + px;
+  
+    controlsElement.addEventListener('click', handleClick, false);
   }
 }

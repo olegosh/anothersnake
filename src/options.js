@@ -1,3 +1,10 @@
+import { log } from './utils';
+import { draw } from './draw';
+
+const renderElement = document.getElementById('snake');
+const tileWidth = 20;
+const tileHeight = 20;
+
 export const options = {
   renderElement,
   context: renderElement.getContext('2d'),
