@@ -27,6 +27,3 @@ export function wait(milliseconds) {
     }, milliseconds);
   });
 }
-
-wait(2000)
-  .then(()=>console.log('after wait'));
