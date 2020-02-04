@@ -1,10 +1,6 @@
 import './index.css';
-import { random, Logger } from './utils';
-import { options } from './options';
+import { random, log } from './utils';
 
-const log = new Logger().log.bind({
-  debug: options.debug
-});
 console.log('from index');
 const r = random(0, 1);
 log(r);
