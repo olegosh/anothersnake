@@ -1,4 +1,5 @@
 import {log, handleClick} from './utils';
+import { Tile } from './objects';
 
 export class Source {
   constructor(options) {

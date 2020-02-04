@@ -1,4 +1,3 @@
-import { log } from './utils';
 import { draw } from './draw';
 
 const renderElement = document.getElementById('snake');

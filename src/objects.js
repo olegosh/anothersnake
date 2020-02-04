@@ -1,4 +1,6 @@
-import { log } from "./utils";
+import { log, random } from "./utils";
+import { source, snake, apples } from "./index";
+import { options } from "./options";
 
 function drawFillRect(x, y, width, height, color, context) {
   context.save();
@@ -68,8 +70,8 @@ export class Snake {
   }
 
   draw() {
-    for(let q = 0; q < this.body.length; q += 1) {
-      this.body[q].draw();
+    for(let i = 0; i < this.body.length; i += 1) {
+      this.body[i].draw();
     }
   }
 
@@ -89,10 +91,10 @@ export class Snake {
     }
     //moving body:
     let next;
-    for(let q = 1; q < this.body.length; q += 1) {
-      next = { x: this.body[q].x, y: this.body[q].y};
-      this.body[q].x = prev.x;
-      this.body[q].y = prev.y;
+    for(let i = 1; i < this.body.length; i += 1) {
+      next = { x: this.body[i].x, y: this.body[i].y};
+      this.body[i].x = prev.x;
+      this.body[i].y = prev.y;
       prev = Object.assign({}, next);
     }
   }
@@ -116,8 +118,8 @@ export class Snake {
 
   checkBites() {
     const head = this.body[0];
-    for(let q = 1; q < this.body.length; q += 1) {
-      if(head.x === this.body[q].x && head.y === this.body[q].y) {
+    for(let i = 1; i < this.body.length; i += 1) {
+      if(head.x === this.body[i].x && head.y === this.body[i].y) {
         log('bite');
         source.toggleStop();
         displayScore.textContent = `Your score: ${score}`;
@@ -132,14 +134,14 @@ export class Snake {
   }
 
   eat() {
-    for(let q = 0; q < apples.length; q += 1) {
-      if(apples[q].x === this.body[0].x && apples[q].y === this.body[0].y) {
+    for(let i = 0; i < apples.length; i += 1) {
+      if(apples[i].x === this.body[0].x && apples[i].y === this.body[0].y) {
         score += 1;
         scoreElement.textContent = `Score: ${score}`;
         source.options.rerenderTime -= 10;
         log('yum');
         this.grow();
-        apples.splice(q, 1);
+        apples.splice(i, 1);
         addApple();
       }
     }
@@ -200,8 +202,8 @@ export function addApple() {
   const randomX = random(0, options.gridWidth - 1) * source.options.tileWidth;
   const randomY = random(0, options.gridHeight - 1) * source.options.tileHeight;
   let isPlace = true;
-  for(let q = 0; q < snake.body.length; q += 1) {
-    if(snake.body[q].x === randomX && snake.body[q].y === randomY) {
+  for(let i = 0; i < snake.body.length; i += 1) {
+    if(snake.body[i].x === randomX && snake.body[i].y === randomY) {
       isPlace = false;
       break;
     }

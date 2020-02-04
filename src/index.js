@@ -1,15 +1,12 @@
 import './index.css';
-import { random, log, setScreenSize } from './utils';
+import { log, setScreenSize } from './utils';
 import { Source } from './source';
 import { options } from './options';
+import { Snake, addApple } from './objects';
 
-log(random(0, 100));
-
-let source,
-    snakeCx,
+export let source, snake, apples;
+let snakeCx,
     snakeCy,
-    snake,
-    apples,
     score;
 const scoreElement = document.getElementById('score'),
       displayScore = document.getElementById('display-score'),
