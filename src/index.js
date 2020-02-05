@@ -43,7 +43,6 @@ function init() {
 window.addEventListener('load', () => {
   log('loading...');
   init();
-  // createControls();
   const playButton = document.getElementById('play-button');
   const menu = document.getElementById('menu');
   const form = document.getElementById('select-size');
@@ -58,7 +57,6 @@ window.addEventListener('load', () => {
   playButton.addEventListener('click', () => {
     menu.style.display = 'none';
     init();
-    // createControls();
     source.start();
   }, false);
   log('loaded');

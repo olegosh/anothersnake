@@ -10,7 +10,7 @@ export const options = {
   rerenderTime: 500,
   testCounter: 0,
   testStopCounter: 100,
-  debug: true,
+  debug: false,
   isStopped: false,
   draw,
   keys: {

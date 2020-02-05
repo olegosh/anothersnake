@@ -6,12 +6,6 @@ export class Source {
     this.options = options;
     this.draw = this.options.draw;
     this.grid = [];
-    // this.render = this.render.bind(this);
-    // this.state = this.state.bind(this);
-    // this.start = this.start.bind(this);
-    // this.toggleStop = this.toggleStop.bind(this);
-    // this.createGrid = this.createGrid.bind(this);
-    // this.setCanvas = this.setCanvas.bind(this);
   }
 
   createGrid() {
