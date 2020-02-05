@@ -1,8 +1,11 @@
 #file
 package-lock.json
 # webpack.config.js
+.firebaserc
+firebase.json
 
 #dir
+.firebase/
 node_modules/
 public/
 temp/
