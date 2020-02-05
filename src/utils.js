@@ -1,4 +1,5 @@
 import { options } from './options';
+import { source, snake } from './index';
 
 export function random(min, max) {
   return Math.floor(
@@ -7,6 +8,7 @@ export function random(min, max) {
 }
 
 export function setScreenSize() {
+  const form = document.getElementById('select-size');
   for(let i = 0; i < form.elements.length; i += 1) {
     let element = form.elements[i];
     if(element.tagName !== 'INPUT') {
@@ -14,6 +16,7 @@ export function setScreenSize() {
     }
     if(element.checked) {
       source.options.gridWidth = source.options.gridHeight = parseInt(element.value);
+      // log(source.options.gridWidth, source.options.gridHeight);
     }
   }
 }
@@ -109,10 +112,10 @@ function setKey(type, keys, key) {
     keys[key] = true;
     snake.changeDirection(key);
     // wait(options.rerenderTime / 4).then(() => snake.changeDirection(key));
-    log(key + ' = true');
+    //log(key + ' = true');
   } else if(type === 'keyup') {
     keys[key] = false;
-    log(key + ' = false');
+    //log(key + ' = false');
   } else if(type === 'click') {
     const id = event.target.id;
     //log(event.target);

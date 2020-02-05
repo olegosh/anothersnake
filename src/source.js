@@ -1,4 +1,4 @@
-import {log, handleClick} from './utils';
+import {wait, log, handleClick} from './utils';
 import { Tile } from './objects';
 
 export class Source {

@@ -9,7 +9,7 @@ export const options = {
   context: renderElement.getContext('2d'),
   rerenderTime: 500,
   testCounter: 0,
-  testStopCounter: 200,
+  testStopCounter: 100,
   debug: true,
   isStopped: false,
   draw,

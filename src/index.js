@@ -1,14 +1,14 @@
 import './index.css';
-import { log, setScreenSize } from './utils';
+import { log, setScreenSize, handleKeydown, handleKeyup } from './utils';
 import { Source } from './source';
 import { options } from './options';
 import { Snake, addApple } from './objects';
 
-export let source, snake, apples;
-let snakeCx,
-    snakeCy,
-    score;
-const scoreElement = document.getElementById('score'),
+export let source, snake, apples, score;
+
+let snakeCx, snakeCy;
+
+export const scoreElement = document.getElementById('score'),
       displayScore = document.getElementById('display-score'),
       gameOver = document.getElementById('game-over'),
       about = document.getElementById('about');
@@ -60,7 +60,7 @@ window.addEventListener('load', () => {
     init();
     // createControls();
     source.start();
-    log('loaded');
   }, false);
+  log('loaded');
 }, false);
 

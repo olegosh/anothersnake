@@ -1,5 +1,5 @@
 import { log } from './utils';
-import { source } from './index';
+import { source, snake, apples } from './index';
 
 export function draw() {
   clearCanvas(this.options.renderElement, this.options.context);
@@ -16,7 +16,7 @@ export function draw() {
   snake.move();
   snake.draw();
 
-  log('frame');
+  //log('frame');
 }
 
 function clearCanvas(canvas, context) {

@@ -1,6 +1,8 @@
 import { log, random } from './utils';
-import { source, snake, apples } from './index';
+import { source, snake, apples, /*score,*/ scoreElement, displayScore, gameOver } from './index';
 import { options } from './options';
+
+let score = 0;
 
 function drawFillRect(x, y, width, height, color, context) {
   context.save();
@@ -125,7 +127,7 @@ export class Snake {
         displayScore.textContent = `Your score: ${score}`;
         about.innerHTML = (`
           <p>${source.options.gameName}</p>
-          <p>${source.options.author}</p>
+          <p>by ${source.options.author}</p>
           <p>${source.options.year}</p>
         `);
         gameOver.style.display = 'block';
