@@ -42,10 +42,20 @@ input[type="radio"]:checked + label {
 #controls {
   margin-top: 5px;
   width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
 }
 
-#controls div {
-  display: inline-table;
+#controls div,
+#center div {
+  /* display: inline-table; */
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+#center {
+  grid-template-rows: auto;
 }
 
 #left,
