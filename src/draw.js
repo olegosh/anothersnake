@@ -1,4 +1,5 @@
-import { log } from "./utils";
+import { log } from './utils';
+import { source } from './index';
 
 export function draw() {
   clearCanvas(this.options.renderElement, this.options.context);

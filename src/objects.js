@@ -1,6 +1,6 @@
-import { log, random } from "./utils";
-import { source, snake, apples } from "./index";
-import { options } from "./options";
+import { log, random } from './utils';
+import { source, snake, apples } from './index';
+import { options } from './options';
 
 function drawFillRect(x, y, width, height, color, context) {
   context.save();
